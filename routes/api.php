@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\MahasiswaController;
+use App\Http\Controllers\api\FupController;
 
 
 /*
@@ -22,6 +23,9 @@ Route::get('/mahasiswa/{id}',[MahasiswaController::class,'edit']);
 Route::post('/mahasiswa/update/{id}',[MahasiswaController::class,'store']);
 Route::delete('/mahasiswa/delete',[MahasiswaController::class,'destroy']);
 // Route::get('/mahasiswa',[MahasiswaController::class,'index']);
+
+Route::get('/fup',[FupController::class,'index']);
+Route::post('/create',[FupController::class,'create']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
