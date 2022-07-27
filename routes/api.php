@@ -26,6 +26,9 @@ Route::delete('/mahasiswa/delete',[MahasiswaController::class,'destroy']);
 
 Route::get('/fup',[FupController::class,'index']);
 Route::post('/create',[FupController::class,'create']);
+Route::get('/show/{package}',[FupController::class,'show']);
+Route::post('/update/{id}',[FupController::class,'update']);
+Route::delete('/destroy/{id}',[FupController::class,'destroy']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
