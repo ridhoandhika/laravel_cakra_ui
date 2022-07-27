@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\MahasiswaController;
 use App\Http\Controllers\api\FupController;
-
+use App\Http\Controllers\api\QuotaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +30,8 @@ Route::get('/show/{package}',[FupController::class,'show']);
 Route::post('/update/{id}',[FupController::class,'update']);
 Route::delete('/destroy/{id}',[FupController::class,'destroy']);
 
+
+Route::get('/quota',[QuotaController::class,'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
